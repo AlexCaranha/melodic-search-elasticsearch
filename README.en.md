@@ -22,9 +22,13 @@ In this repository, you will find:
 
 ## 🧠 Motivation
 
-This work was inspired by and expanded from my master's thesis, where I explore the symbolic representation of melodies in more depth:
+This project was inspired by and expanded from my master's thesis, in which I delve deeper into the study of symbolic melody representation.
 
 🔗 [My LinkedIn (thesis attached in Academic Background)](https://www.linkedin.com/in/alexcaranha/)
+
+For further details and a deeper understanding of the topic, I recommend reading the article below:
+
+🔗 [Elasticsearch: The search engine that also understands music](https://alexcaranha.com/pt/blog/elasticsearch-the-search-engine-that-also-understands-music)
 
 ---
 

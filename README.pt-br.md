@@ -22,9 +22,13 @@ Neste repositório, você encontrará:
 
 ## 🧠 Motivação
 
-Esse trabalho foi inspirado e expandido a partir da minha dissertação de mestrado, onde exploro em mais profundidade a representação simbólica de melodias:
+Este projeto foi inspirado e expandido a partir da minha dissertação de mestrado, na qual aprofundo o estudo sobre representação simbólica de melodias.
 
 🔗 [Meu LinkedIn (dissertação anexada em Formação Acadêmica)](https://www.linkedin.com/in/alexcaranha/)
+
+Para se aprofundar ainda mais no tema, recomendo a leitura do artigo:
+
+🔗 [Elasticsearch: O motor de busca que também entende música](https://alexcaranha.com/pt/blog/elasticsearch-the-search-engine-that-also-understands-music)
 
 ---
 
