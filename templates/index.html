@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Melody Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2 class="mb-4">Melody Search</h2>
+    <form method="post" class="mb-4" id="search-form">
+        <div class="input-group">
+            <input type="text" name="pattern" id="search-input" class="form-control" placeholder="Enter the pattern (e.g.: USDU)" value="{{ pattern }}">
+            <button class="btn btn-primary" type="submit">Search</button>
+            <button class="btn btn-secondary" type="button" id="clear-btn">Clear</button>
+        </div>
+    </form>
+    {% if results %}
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th>Title</th>
+                <th>Pattern</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+            <tr>
+                <td>{{ "%.2f"|format(r.score) }}</td>
+                <td>{{ r.title }}</td>
+                <td>{{ r.pattern }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% elif pattern %}
+        <div class="alert alert-warning">Nenhum resultado encontrado para "{{ pattern }}".</div>
+    {% endif %}
+</div>
+<script>
+    document.getElementById('clear-btn').addEventListener('click', function() {
+        document.getElementById('search-input').value = '';
+        document.getElementById('search-form').submit();
+    });
+</script>
+</body>
+</html>
