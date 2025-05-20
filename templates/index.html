@@ -7,8 +7,11 @@
 </head>
 <body class="bg-light">
 <div class="container mt-5">
-    <h2 class="mb-4">Melody Search</h2>
+    <h2 class="mb-4">Melodic Search (Elasticsearch)</h2>
     <form method="post" class="mb-4" id="search-form">
+        <div class="mb-3">
+            <button class="btn btn-warning" type="button" id="setup-db-btn">Setup Database</button>
+        </div>
         <div class="input-group">
             <input type="text" name="pattern" id="search-input" class="form-control" placeholder="Enter the pattern (e.g.: USDU)" value="{{ pattern }}">
             <button class="btn btn-primary" type="submit">Search</button>
@@ -42,6 +45,18 @@
     document.getElementById('clear-btn').addEventListener('click', function() {
         document.getElementById('search-input').value = '';
         document.getElementById('search-form').submit();
+    });
+
+    document.getElementById('setup-db-btn').addEventListener('click', function() {
+        fetch('/setup_database', {method: 'POST'})
+            .then(response => {
+                if (response.ok) {
+                    alert('Database setup completed!');
+                    window.location.reload();
+                } else {
+                    alert('Database setup failed.');
+                }
+            });
     });
 </script>
 </body>

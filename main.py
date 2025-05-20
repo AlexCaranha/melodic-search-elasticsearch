@@ -26,8 +26,11 @@ def index():
     return render_template("index.html", results=results, pattern=pattern)
 
 
-if __name__ == "__main__":
-    if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-        setup_database()
+@app.route("/setup_database", methods=["POST"])
+def setup_database_route():
+    setup_database()
+    return ("", 204)
 
+
+if __name__ == "__main__":
     app.run()

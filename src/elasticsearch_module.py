@@ -1,9 +1,14 @@
 from elasticsearch import Elasticsearch
+import os
 
 from src.midi_melodies import build_melodies_from_midi_files
 
+elasticsearch_host = os.getenv("ELASTICSEARCH_HOST", "http://localhost")
+elasticsearch_port = os.getenv("ELASTICSEARCH_PORT", "9200")
+
 es = Elasticsearch(
-    "http://localhost:9200", headers={"Content-Type": "application/json"}
+    f"{elasticsearch_host}:{elasticsearch_port}",
+    headers={"Content-Type": "application/json"},
 )
 
 INDEX_NAME = "melodies"
@@ -58,9 +63,7 @@ def populate_data():
 
 def get_melodies(pattern: str):
     query = {
-        "query": {
-            "match": {"melody_pattern": {"query": pattern, "fuzziness": "0"}}
-        }
+        "query": {"match": {"melody_pattern": {"query": pattern, "fuzziness": "0"}}}
     }
     response = es.search(index="melodies", body=query, size=5)
     return response
