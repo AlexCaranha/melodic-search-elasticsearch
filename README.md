@@ -39,4 +39,11 @@ docker-compose up
 Isso irá iniciar tanto o Elasticsearch quanto o serviço de busca melódica.
 
 📊 Demonstração
+
+Utilizando o trecho da música "Parabéns a você" abaixo, sem a nota Mi (destacada em azul):
+<img src="assets/happy_birthday_selection.png" alt="Demo">
+
+Informamos ao programa o padrão "RUDDD", destacado no quadro verde da imagem acima, para buscar as músicas no banco de dados (composto por 10 músicas).
+
+O sistema busca corretamente a música "Parabéns a você".
 <img src="assets/demonstration.gif" alt="Demo">
